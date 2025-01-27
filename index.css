@@ -1,0 +1,238 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+}
+
+body {
+    overflow-y: scroll; /* Keeps the content scrollable */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in webkit browsers (Chrome, Safari, etc.) */
+  }
+  
+  html {
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    scroll-behavior: smooth;
+  }
+
+main{
+    max-width: 2000px;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+
+h1{
+    font-size: 70px;
+    color: rgb(156, 0, 0);
+    margin-top: 10px;
+    user-select: none;
+    animation: floatUpDown 2s infinite ease-in-out;
+}
+
+h2{
+    text-align: center;
+    font-size: 40px;
+    color: rgb(156, 0, 0);
+}
+
+img{
+    width: 100%;
+}
+
+#page-title{
+    text-align: center;
+    padding: 300px 0 200px;
+    width: 100%;
+    margin-bottom: 100px;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)),
+        url('img/splash.jpg');
+    background-repeat: no-repeat; /* Ensure both images do not repeat */
+    background-size: cover; /* Set size for both images */
+    background-position: left; 
+}
+
+#page-title img{
+    width: 200px;
+    animation: floatUpDown 2s infinite ease-in-out;
+}
+
+.game-container{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content:center;
+    margin-bottom: 100px;
+}
+
+.game-container-r{
+    flex-direction: row-reverse;
+}
+
+.game-container *{
+    margin: 0 2%;
+    margin-bottom: 10px;
+}
+
+.game-container div{
+    max-width: 400px;
+}
+
+.game-container h3{
+    font-size: 30px;
+}
+
+.game-container p{
+    font-size: 20px;
+    opacity: 80%;
+}
+
+.game-container > img{
+    width: 15%;
+    transition: 0.3s;
+}
+
+.game-container > img:hover{
+    transform: scale(1.02) rotatez(3deg);
+}
+
+.text-container{
+    background-color: rgb(156, 0, 0);
+    color: white;
+    border-radius: 15px;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.text-container:hover{
+    transform: scale(1.05);
+    box-shadow: 3px 3px 5px rgb(138, 138, 138);
+}
+
+.available-platforms{
+    padding: 0;
+    margin: 0;
+}
+
+.available-platform-img{
+    width: 50%;
+    padding: 0;
+    margin: 0;
+    transition: 0.3s;
+    opacity: 90%;
+}
+
+.available-platform-img:hover{
+    transform: scale(1.1);
+    opacity: 100%;
+}
+
+#contact-container{
+    padding-left: 10%;
+    margin-top: 50px;
+}
+
+.person-contact{
+    max-width: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    margin: 5px auto 10px;
+    transition: 0.1s;
+}
+
+.person-contact:hover{
+    transform: translateX(3px);
+    cursor: pointer;
+}
+
+.person-contact img{
+    width: 20%;
+    margin-right: 2%;
+}
+
+
+.person-contact h3{
+    color: rgb(156, 0, 0);;
+}
+
+.mail-picture{
+    background-image: url('img/mail.png');
+    background-size: cover;
+}
+
+.person-contact:hover .mail-picture{
+    background-image: url('img/clipboard.png');
+}
+
+footer{
+    height: 100px;
+    background: linear-gradient(to top, rgb(156, 0, 0) 70%, rgba(156, 0, 0, 0));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 100px;
+}
+
+@keyframes floatUpDown {
+    0% {
+      transform: translateY(0); /* Initial position */
+    }
+    50% {
+      transform: translateY(-10px); /* Move up by 10px */
+    }
+    100% {
+      transform: translateY(0); /* Back to original position */
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fadeInClass {
+    opacity: 0; /* Start with the element hidden */
+    transition: opacity 0.2s ease-out; /* Optional for smoother transition */
+  }
+  
+  .fadeInClass.visible {
+    opacity: 1; /* Make the element visible when in view */
+    animation: fadeIn 1s ease-out; /* Play fade-in animation */
+  }
+
+@media screen and (max-width: 791px) {
+    .text-container *{
+        text-align: center;
+    }
+
+    .game-container{
+        flex-direction: column;
+    }
+
+    .game-container > img{
+        width: 80%;
+    }
+
+    .available-platforms{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+  

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <title>Matchup Games</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#"><img src="img/logo.png" alt="logo"></a>
+            <a href="#projects" class="nav-mobile-images"><img src="img/projects.png" alt="logo"></a>
+            <a href="#contact" class="nav-mobile-images"><img src="img/phone-call-white-icon.png" alt="logo"></a>
+            <ul>
+                <a href="#projects"><li>Projects</li></a>
+                <a href="#contact"><li>Contact</li></a>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="page-title" class="fadeInClass">
+            <img id="logoimage" src="img/logo1.png" alt="biglogo">
+            <h1>
+                MatchUp Games
+            </h1>
+        </section>
+        <section class="fadeInClass">
+            <article>
+                <h2 id="projects">Projects</h2>
+                <div class="game-container game-container-r">
+                    <img src="img/infinitewarriors.png" alt="mobile">
+                    <div class="text-container">
+                        <h3>Infinite warriors</h3>
+                        <p>Evolve your army of warriors and embark on an epic journey through time!</p>
+                        <div class="available-platforms">
+                            <a href="https://play.google.com/store/apps/details?id=com.matchup.Bastion_Bashers" target="_blank"><img class="available-platform-img" src="img/googlePlay.png" alt="googlePlay"></a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section  class="fadeInClass">
+            <article>
+                <h2 id="contact">
+                     Contacts
+                </h2>
+                <div id="contact-container">
+                    <div class="person-contact" onclick="copyToClipboard('filip@matchupgames.us')">
+                        <img src="img/contactPlaceholder.png" alt="mail" class="mail-picture">
+                        <div class="person-contact-text">
+                            <h3>Development</h3>
+                            <p>filip@matchupgames.us</p>
+                        </div>
+                    </div>
+                    <div class="person-contact" onclick="copyToClipboard('gregor@matchupgames.us')">
+                        <img src="img/contactPlaceholder.png" alt="mail" class="mail-picture">
+                        <div class="person-contact-text">
+                            <h3>UA & Marketing</h3>
+                            <p>gregor@matchupgames.us</p>
+                        </div>
+                    </div>
+                    <div class="person-contact" onclick="copyToClipboard('fanigluic99@gmail.com')">
+                        <img src="img/contactPlaceholder.png" alt="mail" class="mail-picture">
+                        <div class="person-contact-text">
+                            <h3>Art</h3>
+                            <p>fanigluic99@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="person-contact" onclick="copyToClipboard('Sv3n.zinic@gmail.com')">
+                        <img src="img/contactPlaceholder.png" alt="mail" class="mail-picture">
+                        <div class="person-contact-text">
+                            <h3>Creatives</h3>
+                            <p>Sv3n.zinic@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer>
+        @MatchUp Games 2025
+    </footer>
+</body>
+</html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".fadeInClass");
+
+    const observerOptions = {
+        threshold: 0.2, // Trigger when 10% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+        }
+        });
+    }, observerOptions);
+
+    elements.forEach((el) => observer.observe(el));
+    });
+</script>
+
+<script>
+    function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        console.log('Text copied to clipboard!');
+    }).catch(err => {
+        console.error('Failed to copy text: ', err);
+    });
+}
+</script>
